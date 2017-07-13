@@ -6,7 +6,7 @@ scp -i /var/lib/jenkins/.ssh/id_rsa profile.html machines@machinesentience.com:p
 
 cd /var/lib/jenkins/workspace/stackoverflowprofile
 
-sudo /usr/bin/html2ps profile.html > ~/profile.ps; 
+sudo /usr/bin/html2ps profile.html > ~/profile.ps
 
 sudo cp ~/profile.ps /var/lib/jenkins/stackoverflowprofile/profile.ps
 
