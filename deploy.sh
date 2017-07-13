@@ -12,7 +12,9 @@ sudo cp ~/profile.ps /var/lib/jenkins/stackoverflowprofile/profile.ps
 
 cd /var/lib/jenkins/stackoverflowprofile
 
-git add profile.ps
+convert profile.ps profile.png
+
+git add profile.png
 
 git commit -m "jenkins update image"
 
