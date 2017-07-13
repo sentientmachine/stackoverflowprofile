@@ -2,7 +2,7 @@
 
 echo "k"
 
-scp -i /var/lib/jenkins/id_rsa profile.html machines@machinesentience.com:public_html/profile.html
+scp -i /var/lib/jenkins/.ssh/id_rsa profile.html machines@machinesentience.com:public_html/profile.html
 
 cd /var/lib/jenkins/workspace/stackoverflowprofile
 
