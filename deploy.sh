@@ -12,15 +12,13 @@ sudo cp ~/profile.ps /var/lib/jenkins/stackoverflowprofile/profile.ps
 
 cd /var/lib/jenkins/stackoverflowprofile
 
-rm profile.png
-rm profile-1.png
-rm profile-0.png
+rm profile*.png
 
 git pull
 
 convert profile.ps profile.png
 
-convert -append *.png profile.png
+convert -trim -append *.png profile.png
 
 git add profile.png
 
