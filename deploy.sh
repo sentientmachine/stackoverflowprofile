@@ -16,7 +16,7 @@ rm profile*.png
 
 git pull
 
-convert profile.ps profile.png
+convert -quality 100 profile.ps profile.png
 
 convert -trim -append *.png profile.png
 
