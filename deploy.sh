@@ -12,9 +12,7 @@ sudo cp ~/profile.ps /var/lib/jenkins/stackoverflowprofile/profile.ps
 
 cd /var/lib/jenkins/stackoverflowprofile
 
-rm profile.png
-rm profile-1.png
-rm profile-0.png
+rm profile*.png
 
 git pull
 
