@@ -18,7 +18,10 @@ git pull
 
 convert -quality 100 profile.ps profile.png
 
-convert -trim -quality 100 -append *.png profile.png
+#This crop and repage bullshit is to prevent imagemagick's convert program
+#from casting the final image as color greyscale because the first one is
+#greyscale.  This is a serious bug in the software, requires ridiculous workaround.
+convert -trim -quality 100 xc:red *.png -append -crop +0+1 +repage profile.png
 
 git add profile.png
 
