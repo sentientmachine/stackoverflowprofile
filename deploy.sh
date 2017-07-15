@@ -27,11 +27,11 @@ git pull
 #file to a unique profile-#.png
 convert -quality 100 profile.ps profile.png
 
-#send the profile.png to webspace so we can see changes fast.
-scp -i /var/lib/jenkins/.ssh/id_rsa profile.png machines@machinesentience.com:public_html/profile.png
-
 #Force colorspace to RGB, append them all, trim whitespace.
 convert -trim -colorspace sRGB *.png -append profile.png
+
+#send the profile.png to webspace so we can see changes fast.
+scp -i /var/lib/jenkins/.ssh/id_rsa profile.png machines@machinesentience.com:public_html/profile.png
 
 #add commit push:
 git add profile.png
