@@ -37,7 +37,7 @@ convert -trim -quality 100 -colorspace sRGB *.png -append profile.png
 scp -i /var/lib/jenkins/.ssh/id_rsa profile.png machines@machinesentience.com:public_html/profile.png
 
 #add commit push:
-git add profile.png
+git add profile.png --ignore-removal
 
 git commit -m "jenkins update image"
 
