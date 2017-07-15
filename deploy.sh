@@ -28,7 +28,7 @@ git pull
 convert -quality 100 profile.ps profile.png
 
 #Force colorspace to RGB, append them all, trim whitespace.
-convert -trim -colorspace sRGB *.png -append profile.png
+convert -trim -quality 100 -colorspace sRGB *.png -append profile.png
 
 #send the profile.png to webspace so we can see changes fast.
 scp -i /var/lib/jenkins/.ssh/id_rsa profile.png machines@machinesentience.com:public_html/profile.png
