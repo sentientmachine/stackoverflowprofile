@@ -2,6 +2,12 @@
 
 echo "starting"
 
+#specify the header things on the profile because html2ps needs them:
+echo '<html><body><font size=6.5em>' | cat - profile.html > temp.txt && mv temp.txt profile.html
+
+#specify the footer things on the profile because html2ps needs them
+echo "</font></body></html>" >> profile.html
+
 #send the html over to the webspace
 scp -i /var/lib/jenkins/.ssh/id_rsa profile.html machines@machinesentience.com:public_html/profile.html
 
@@ -25,7 +31,7 @@ git pull
 
 #Convert the postscript to png, for some boneheaded reason it converts every page of the postscript 
 #file to a unique profile-#.png
-convert -quality 100 profile.ps profile.png
+convert -trim -quality 100 profile.ps profile.png
 
 #Force colorspace to RGB, append them all, trim whitespace.
 convert -trim -colorspace sRGB *.png -append profile.png
