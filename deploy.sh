@@ -12,10 +12,7 @@ cd /var/lib/jenkins/workspace/stackoverflowprofile
 #-U means use the included config.conf file for special html2ps config items
 #-u means underline hyperlinks
 #-f means use the following config file
-sudo /usr/bin/html2ps -U -u -f config.conf profile.html > profile.ps
-
-#Copy it over to the place where jenkins can do a git push to github so we can use https
-sudo cp ~/profile.ps /var/lib/jenkins/stackoverflowprofile/profile.ps
+sudo /usr/bin/html2ps -U -u -f config.conf profile.html > /var/lib/jenkins/stackoverflowprofile/profile.ps
 
 #Go to the place where we can do the add, commit, push
 cd /var/lib/jenkins/stackoverflowprofile
