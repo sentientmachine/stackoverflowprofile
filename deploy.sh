@@ -18,6 +18,8 @@ git pull
 
 convert -quality 100 profile.ps profile.png
 
+scp -i /var/lib/jenkins/.ssh/id_rsa profile.png machines@machinesentience.com:public_html/profile.png
+
 #This crop and repage bullshit is to prevent imagemagick's convert program
 #from casting the final image as color greyscale because the first one is
 #greyscale.  This is a serious bug in the software, requires ridiculous workaround.
